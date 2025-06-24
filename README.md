@@ -6,7 +6,7 @@ A professional and interactive **Streamlit web application** that predicts wheth
 
 ## Demo
 
-**Live App**: **[Coming Soon](https://personalitypredictionapp.streamlit.app/)**
+**Live App**: **[PERSONALITY_WEBAPP](https://personalitypredictionapp.streamlit.app/)**
 
 ---
 
