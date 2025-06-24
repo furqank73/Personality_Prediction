@@ -7,6 +7,9 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+from app import main
+main()
+
 import pandas as pd
 import joblib
 import matplotlib.pyplot as plt
