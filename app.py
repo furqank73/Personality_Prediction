@@ -191,7 +191,7 @@ st.markdown("""
     
     /* Slider thumb styling */
     .stSlider > div > div > div > div > div {
-        background: #4a6bff !important;
+        background: #fcfcfc !important;
         border: 3px solid white !important;
         box-shadow: 0 2px 8px rgba(74, 107, 255, 0.4) !important;
         width: 24px !important;
@@ -396,7 +396,7 @@ def main():
 
     # Create enhanced form for user input
     with st.form("personality_form"):
-        st.markdown("<h2 class='subheader'>🧠 Behavioral Questionnaire</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 class='subheader'>Behavioral Questionnaire</h2>", unsafe_allow_html=True)
         st.markdown("""
         <div style='background: linear-gradient(135deg, #f8f9ff 0%, #fff5f5 100%); 
                     padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; 
@@ -413,26 +413,26 @@ def main():
         with col1:
             st.markdown("""
             <div class='form-section-container'>
-                <h4 class='form-section-header'>👥 Social Behavior Patterns</h4>
+                <h4 class='form-section-header'>Social Behavior Patterns</h4>
             """, unsafe_allow_html=True)
             
             time_alone = st.slider(
-                "⏰ Time spent alone per day (hours)", 
+                "Time spent alone per day (hours)", 
                 0, 11, 5,
                 help="Average hours spent alone each day"
             )
             social_events = st.slider(
-                "🎉 Social events attended per month", 
+                "Social events attended per month", 
                 0, 10, 3,
                 help="How many social events you typically attend each month"
             )
             going_outside = st.slider(
-                "🚪 Times going outside per week", 
+                "Times going outside per week", 
                 0, 7, 4,
                 help="How many times you leave your home each week"
             )
             friends_circle = st.slider(
-                "👫 Close friends circle size", 
+                "Close friends circle size", 
                 0, 15, 5,
                 help="Number of people you consider close friends"
             )
@@ -441,31 +441,31 @@ def main():
         with col2:
             st.markdown("""
             <div class='form-section-container'>
-                <h4 class='form-section-header'>🧠 Psychological & Digital Factors</h4>
+                <h4 class='form-section-header'>Psychological & Digital Factors</h4>
             """, unsafe_allow_html=True)
             
             stage_fear = st.selectbox(
-                "🎭 Do you experience stage fear?",
+                "Do you experience stage fear?",
                 [("No", 0), ("Yes", 1)],
                 format_func=lambda x: x[0],
                 help="Do you feel anxious about public speaking or performing?"
             )[1]
             
             drained = st.selectbox(
-                "😴 Do you feel drained after socializing?",
+                "Do you feel drained after socializing?",
                 [("No", 0), ("Yes", 1)],
                 format_func=lambda x: x[0],
                 help="Do you need alone time to recharge after social interactions?"
             )[1]
             
             post_freq = st.slider(
-                "📱 Social media posts per week", 
+                "Social media posts per week", 
                 0, 10, 2,
                 help="How often you post on social media each week"
             )
             
             high_engagement = st.selectbox(
-                "💬 Do you actively engage in conversations?",
+                "Do you actively engage in conversations?",
                 [("No", 0), ("Yes", 1)],
                 format_func=lambda x: x[0],
                 help="Do you frequently initiate or actively participate in discussions?"
@@ -477,7 +477,7 @@ def main():
         col1, col2, col3 = st.columns([1,2,1])
         with col2:
             submitted = st.form_submit_button(
-                "🔍 Analyze My Personality", 
+                "Analyze My Personality", 
                 use_container_width=True,
                 type="primary"
             )
@@ -606,7 +606,7 @@ def main():
                         else:
                             st.markdown("""
                             <div style='color: #2b2d42;'>
-                            <h2 style='color: #4a6bff; margin-bottom: 1rem;'>🧠 Extrovert Personality Profile</h2>
+                            <h2 style='color: #4a6bff; margin-bottom: 1rem;'>Extrovert Personality Profile</h2>
                             <p style='margin-bottom: 1rem; line-height: 1.6;'>
                             Your responses indicate a <strong>strong preference for extroverted tendencies</strong>. 
                             This psychological profile suggests you likely:

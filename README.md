@@ -4,45 +4,44 @@ A professional and interactive **Streamlit web application** that predicts wheth
 
 ---
 
-## 🚀 Demo
+## Demo
 
-🔗 **Live App**: *Coming Soon*  
-📽️ **Demo Video**: *Coming Soon*
+**Live App**: **[Coming Soon](https://personalitypredictionapp.streamlit.app/)**
 
 ---
 
 ## 📌 Features
 
-- 🧾 Upload dataset or enter individual traits for prediction
-- 🧍‍♂️ Predict personality (Introvert/Extrovert) using behavioral inputs
-- 📊 Personality Spectrum Gauge (Introversion Level)
-- 📈 Behavioral Comparison Table for feature interpretation
-- 🧠 Interactive and visually engaging charts (Plotly)
-- 🎨 Clean and modern Streamlit UI with custom CSS
+- Upload dataset or enter individual traits for prediction
+- Predict personality (Introvert/Extrovert) using behavioral inputs
+- Personality Spectrum Gauge (Introversion Level)
+- Behavioral Comparison Table for feature interpretation
+- Interactive and visually engaging charts (Plotly)
+- Clean and modern Streamlit UI with custom CSS
 
 ---
 
-## 🧠 Model Development Workflow
+## Model Development Workflow
 
 The model was developed through a structured and explainable machine learning workflow as documented in the [Jupyter Notebook](https://github.com/furqank73/Personality_Prediction/personality.ipynb):
 
-### 1. 📥 Data Loading & Exploration
+### 1. Data Loading & Exploration
 
 - Loaded behavioral data with features like time spent alone, stage fear, etc.
 - Explored value distributions and class balance using `pandas` and `seaborn`.
 
-### 2. 📊 Exploratory Data Analysis (EDA)
+### 2. Exploratory Data Analysis (EDA)
 
 - Visualized behavioral patterns using boxplots, countplots, and heatmaps.
 - Key differences between introverts and extroverts were identified.
 
-### 3. 🧹 Data Preprocessing
+### 3. Data Preprocessing
 
 - Filled missing values (e.g. median imputation).
 - Cleaned and standardized column names.
 - Converted binary categorical values (Yes/No) to numeric (0/1).
 
-### 4. 🧪 Feature Selection & Engineering
+### 4. Feature Selection & Engineering
 
 Final input features used:
 - `Time_spent_Alone`
@@ -55,7 +54,7 @@ Final input features used:
 
 Target: `Personality` (0 = Introvert, 1 = Extrovert)
 
-### 5. 📈 Model Building & Training
+### 5. Model Building & Training
 
 - Performed an 80/20 train-test split
 - Trained multiple models:
@@ -64,13 +63,13 @@ Target: `Personality` (0 = Introvert, 1 = Extrovert)
   - KNN
 - Selected the best model based on evaluation metrics.
 
-### 6. ✅ Model Evaluation
+### 6. Model Evaluation
 
 - Accuracy, Precision, Recall, and F1-score calculated
 - Confusion matrix visualized
 - Random Forest provided the most balanced performance
 
-### 7. 💾 Model Export
+### 7. Model Export
 
 - Final model exported using:
   ```python
