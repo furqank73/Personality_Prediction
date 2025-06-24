@@ -299,7 +299,7 @@ def main():
         There are no right or wrong answers - this is about understanding your natural tendencies.
         </p>
         """, unsafe_allow_html=True)
-        col1, col2 = st.columns(2)
+        col1, col2 = st.columns([1, 1])
         with col1:
             with stylable_container(
                 key="social_container",
@@ -309,6 +309,7 @@ def main():
                     border-radius: 16px;
                     padding: 1.5rem;
                     border: 1px solid #e9ecef;
+                    margin-right: 0rem !important;
                 }
                 """
             ):
@@ -342,6 +343,7 @@ def main():
                     border-radius: 16px;
                     padding: 1.5rem;
                     border: 1px solid #e9ecef;
+                    margin-right: 0rem !important;
                 }
                 """
             ):
