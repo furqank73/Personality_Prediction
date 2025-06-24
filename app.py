@@ -174,16 +174,120 @@ st.markdown("""
     }
     /* Custom form */
     .stForm {
-        border: 1px solid #e9ecef;
-        border-radius: 16px;
-        padding: 2rem;
-        background: var(--lighter);
-        box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+        border: 2px solid #4a6bff !important;
+        border-radius: 20px !important;
+        padding: 2.5rem !important;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%) !important;
+        box-shadow: 0 12px 24px rgba(74, 107, 255, 0.15) !important;
+        margin: 2rem 0 !important;
     }
-    /* Custom divider */
-    .stDivider>div>div>div {
-        background: linear-gradient(90deg, var(--primary), var(--accent));
-        height: 3px !important;
+    
+    /* Make slider tracks more visible */
+    .stSlider > div > div > div > div {
+        background: linear-gradient(90deg, #4a6bff, #ff6b6b) !important;
+        height: 8px !important;
+        border-radius: 4px !important;
+    }
+    
+    /* Slider thumb styling */
+    .stSlider > div > div > div > div > div {
+        background: #4a6bff !important;
+        border: 3px solid white !important;
+        box-shadow: 0 2px 8px rgba(74, 107, 255, 0.4) !important;
+        width: 24px !important;
+        height: 24px !important;
+    }
+    
+    /* Enhanced selectbox styling */
+    .stSelectbox > div > div {
+        border: 2px solid #e9ecef !important;
+        border-radius: 12px !important;
+        background: white !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .stSelectbox > div > div:focus-within {
+        border-color: #4a6bff !important;
+        box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.1) !important;
+        transform: translateY(-2px) !important;
+    }
+    
+    /* Container styling for better section separation */
+    .form-section-container {
+        background: white !important;
+        border-radius: 16px !important;
+        padding: 2rem !important;
+        border: 2px solid #e9ecef !important;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.08) !important;
+        margin-bottom: 1.5rem !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .form-section-container:hover {
+        border-color: #4a6bff !important;
+        box-shadow: 0 12px 24px rgba(74, 107, 255, 0.12) !important;
+        transform: translateY(-2px) !important;
+    }
+    
+    /* Section headers more prominent */
+    .form-section-header {
+        color: #4a6bff !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 1.5rem !important;
+        padding-bottom: 0.5rem !important;
+        border-bottom: 2px solid #4a6bff !important;
+        text-align: center !important;
+    }
+    
+    /* Input label styling */
+    .stSlider > label, .stSelectbox > label {
+        font-weight: 600 !important;
+        color: #2b2d42 !important;
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* Form submit button enhancement */
+    .stForm .stButton > button {
+        background: linear-gradient(135deg, #4a6bff 0%, #6a5acd 100%) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 15px !important;
+        padding: 16px 48px !important;
+        font-weight: 700 !important;
+        font-size: 1.1rem !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 8px 16px rgba(74, 107, 255, 0.3) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+    }
+    
+    .stForm .stButton > button:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 12px 24px rgba(74, 107, 255, 0.4) !important;
+        background: linear-gradient(135deg, #6a5acd 0%, #4a6bff 100%) !important;
+    }
+    
+    /* Add subtle animation to form elements */
+    .stSlider, .stSelectbox {
+        transition: all 0.3s ease !important;
+    }
+    
+    .stSlider:hover, .stSelectbox:hover {
+        transform: translateY(-1px) !important;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .form-section-container {
+            padding: 1.5rem !important;
+            margin-bottom: 1rem !important;
+        }
+        
+        .stForm {
+            padding: 1.5rem !important;
+        }
     }
     </style>
     """, unsafe_allow_html=True)
@@ -290,93 +394,94 @@ def main():
         'High_Engagement'
     ]
 
-    # Create form for user input
+    # Create enhanced form for user input
     with st.form("personality_form"):
-        st.markdown("<h2 class='subheader'>Behavioral Questionnaire</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 class='subheader'>🧠 Behavioral Questionnaire</h2>", unsafe_allow_html=True)
         st.markdown("""
-        <p style='color: #495057; margin-bottom: 1.5rem;'>
-        Please answer the following questions honestly about your typical behaviors and preferences.
-        There are no right or wrong answers - this is about understanding your natural tendencies.
-        </p>
+        <div style='background: linear-gradient(135deg, #f8f9ff 0%, #fff5f5 100%); 
+                    padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; 
+                    border-left: 4px solid #4a6bff;'>
+            <p style='color: #495057; margin: 0; font-size: 1.1rem; line-height: 1.6;'>
+            <strong>📋 Instructions:</strong> Please answer the following questions honestly about your typical behaviors and preferences.
+            There are no right or wrong answers - this is about understanding your natural tendencies.
+            </p>
+        </div>
         """, unsafe_allow_html=True)
-        col1, col2 = st.columns([1, 1])
+        
+        col1, col2 = st.columns(2, gap="large")
+        
         with col1:
-            with stylable_container(
-                key="social_container",
-                css_styles="""
-                {
-                    background-color: #f8f9fa;
-                    border-radius: 16px;
-                    padding: 1.5rem;
-                    border: 1px solid #e9ecef;
-                    margin-right: 0rem !important;
-                }
-                """
-            ):
-                st.markdown("<h4 style='color: #4a6bff; margin-bottom: 1rem;'>Social Behavior Patterns</h4>", unsafe_allow_html=True)
-                time_alone = st.slider(
-                    "Time spent alone per day (hours)", 
-                    0, 11, 5,
-                    help="Average hours spent alone each day"
-                )
-                social_events = st.slider(
-                    "Social events attended per month", 
-                    0, 10, 3,
-                    help="How many social events you typically attend each month"
-                )
-                going_outside = st.slider(
-                    "Times going outside per week", 
-                    0, 7, 4,
-                    help="How many times you leave your home each week"
-                )
-                friends_circle = st.slider(
-                    "Close friends circle size", 
-                    0, 15, 5,
-                    help="Number of people you consider close friends"
-                )
+            st.markdown("""
+            <div class='form-section-container'>
+                <h4 class='form-section-header'>👥 Social Behavior Patterns</h4>
+            """, unsafe_allow_html=True)
+            
+            time_alone = st.slider(
+                "⏰ Time spent alone per day (hours)", 
+                0, 11, 5,
+                help="Average hours spent alone each day"
+            )
+            social_events = st.slider(
+                "🎉 Social events attended per month", 
+                0, 10, 3,
+                help="How many social events you typically attend each month"
+            )
+            going_outside = st.slider(
+                "🚪 Times going outside per week", 
+                0, 7, 4,
+                help="How many times you leave your home each week"
+            )
+            friends_circle = st.slider(
+                "👫 Close friends circle size", 
+                0, 15, 5,
+                help="Number of people you consider close friends"
+            )
+            st.markdown("</div>", unsafe_allow_html=True)
+
         with col2:
-            with stylable_container(
-                key="psych_container",
-                css_styles="""
-                {
-                    background-color: #f8f9fa;
-                    border-radius: 16px;
-                    padding: 1.5rem;
-                    border: 1px solid #e9ecef;
-                    margin-right: 0rem !important;
-                }
-                """
-            ):
-                st.markdown("<h4 style='color: #4a6bff; margin-bottom: 1rem;'>Psychological & Digital Factors</h4>", unsafe_allow_html=True)
-                stage_fear = st.selectbox(
-                    "Do you experience stage fear?",
-                    [("No", 0), ("Yes", 1)],
-                    format_func=lambda x: x[0],
-                    help="Do you feel anxious about public speaking or performing?"
-                )[1]
-                drained = st.selectbox(
-                    "Do you feel drained after socializing?",
-                    [("No", 0), ("Yes", 1)],
-                    format_func=lambda x: x[0],
-                    help="Do you need alone time to recharge after social interactions?"
-                )[1]
-                post_freq = st.slider(
-                    "Social media posts per week", 
-                    0, 10, 2,
-                    help="How often you post on social media each week"
-                )
-                high_engagement = st.selectbox(
-                    "Do you actively engage in conversations?",
-                    [("No", 0), ("Yes", 1)],
-                    format_func=lambda x: x[0],
-                    help="Do you frequently initiate or actively participate in discussions?"
-                )[1]
+            st.markdown("""
+            <div class='form-section-container'>
+                <h4 class='form-section-header'>🧠 Psychological & Digital Factors</h4>
+            """, unsafe_allow_html=True)
+            
+            stage_fear = st.selectbox(
+                "🎭 Do you experience stage fear?",
+                [("No", 0), ("Yes", 1)],
+                format_func=lambda x: x[0],
+                help="Do you feel anxious about public speaking or performing?"
+            )[1]
+            
+            drained = st.selectbox(
+                "😴 Do you feel drained after socializing?",
+                [("No", 0), ("Yes", 1)],
+                format_func=lambda x: x[0],
+                help="Do you need alone time to recharge after social interactions?"
+            )[1]
+            
+            post_freq = st.slider(
+                "📱 Social media posts per week", 
+                0, 10, 2,
+                help="How often you post on social media each week"
+            )
+            
+            high_engagement = st.selectbox(
+                "💬 Do you actively engage in conversations?",
+                [("No", 0), ("Yes", 1)],
+                format_func=lambda x: x[0],
+                help="Do you frequently initiate or actively participate in discussions?"
+            )[1]
+            st.markdown("</div>", unsafe_allow_html=True)
+
+        # Enhanced submit button section
+        st.markdown("<br>", unsafe_allow_html=True)
         col1, col2, col3 = st.columns([1,2,1])
         with col2:
-            submitted = st.form_submit_button("Analyze My Personality", 
-                                            use_container_width=True,
-                                            type="primary")
-
+            submitted = st.form_submit_button(
+                "🔍 Analyze My Personality", 
+                use_container_width=True,
+                type="primary"
+            )
+            
     # When form is submitted
     if submitted:
         # Create input dataframe
