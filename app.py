@@ -1,15 +1,4 @@
 import streamlit as st
-# Set page config
-st.set_page_config(
-    page_title="PersonaPredict Pro | Advanced Personality Analysis",
-    page_icon="🧠",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
-from app import main
-main()
-
 import pandas as pd
 import joblib
 import matplotlib.pyplot as plt
@@ -19,6 +8,14 @@ import time
 import plotly.graph_objects as go
 from streamlit_extras.metric_cards import style_metric_cards
 from streamlit_extras.stylable_container import stylable_container
+
+# Set page config
+st.set_page_config(
+    page_title="PersonaPredict Pro | Advanced Personality Analysis",
+    page_icon="🧠",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 # Custom CSS for professional styling
 st.markdown("""
